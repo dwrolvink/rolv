@@ -3,3 +3,4 @@ Personal package to quickly setup a shell to my liking, with functions, shell in
 
 Not intended to be used by others, though everyone is free to copy/reuse code that they find useful.
 
+

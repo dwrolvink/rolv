@@ -15,7 +15,7 @@ from . import package
 # ====================================================================
 
 
-def get_rc_config():
+def get_rc_config(path):
     """provide config to be put in the rc files. Called by rc.compile_config_block()"""
     lines = ["# -- Executables"]
     for executable in get_executable_paths():

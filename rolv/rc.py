@@ -7,19 +7,8 @@ import os
 import re
 from pathlib import Path
 
-from . import executables, config
+from . import executables, config, apps
 from .lib import insert, trim_trailing_newlines
-
-
-def compose_config():
-    """Called to compose new config to be put in the bashrc. Lacks the fencing, just the config.
-    If you want to read the current config block, see get_config_block()"""
-
-    block = ""
-    block += config.get_rc_config()
-    block += executables.get_rc_config()
-
-    return block
 
 
 def get_rc_file_paths():
@@ -48,6 +37,18 @@ def set_rc_files():
         set_rc_file(abs_path)
 
 
+def compose_config(path):
+    """Called to compose new config to be put in the bashrc. Lacks the fencing, just the config.
+    If you want to read the current config block, see get_config_block()"""
+
+    block = ""
+    block += insert(config.get_rc_config(path))
+    block += insert(executables.get_rc_config(path))
+    block += insert(apps.get_rc_config(path))
+
+    return block
+
+
 def set_rc_file(path):
     """Updates/Places the rolv config block in the given rc file"""
     if path.exists() is False:
@@ -68,7 +69,7 @@ def set_rc_file(path):
         contents += "\n"
 
     contents += "\n# <rolv config>\n# =======================================================\n"
-    contents += insert(compose_config(), space=0)
+    contents += insert(compose_config(path), space=0)
     contents += "# =======================================================\n# </rolv config>\n"
 
     with open(path, "w") as f:

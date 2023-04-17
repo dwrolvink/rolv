@@ -2,6 +2,8 @@
     General helper functions
 """
 
+import os
+
 
 def insert(text, space=1):
     """Tests if last char is newline, and if not, will add the newline"""
@@ -57,3 +59,4 @@ def trim_newlines(text_or_lines):
     text_or_lines = trim_preceeding_newlines(text_or_lines)
     text_or_lines = trim_trailing_newlines(text_or_lines)
     return text_or_lines
+

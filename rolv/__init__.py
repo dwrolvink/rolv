@@ -2,23 +2,26 @@ from . import rc, executables, package
 
 
 def help_text():
-
-    print(f"""
+    print(
+        f"""
                   dP          
                   88          
 88d888b. .d8888b. 88 dP   .dP 
 88'  `88 88'  `88 88 88   d8' 
 88       88.  .88 88 88 .88'  
 dP       `88888P' dP 8888P'   v{package.get_version()}            
-""")
-    print("\"\"\"A simple tool to synchronize all my \nquality of life scripts between servers.\"\"\"\n")
+"""
+    )
+    print('"""A simple tool to synchronize all my \nquality of life scripts between servers."""\n')
     print("rolv.install    - install/update executables, aliases, etc")
     print("rolv.version    - get version of package")
     print("rolv.disclaimer - get a short list of things you need to know before using this package")
     print("\n")
 
+
 def disclaimer():
-    print("""
+    print(
+        """
 8888888b.  d8b                   888          d8b                                         
 888  "Y88b Y8P                   888          Y8P                                         
 888    888                       888                                                      
@@ -34,7 +37,9 @@ Will add/update the  ` # <rolv config> ... # </rolv config> `  block in any rc i
   * Unless the ROLV_RC_FILE_PATH environment variable is set.
   
 Will delete any file under  ` $HOME/.local/bin `  that starts with  ` __rolv_ `  .   
-    """)
+    """
+    )
+
 
 def version():
     print(package.get_version())
@@ -44,6 +49,7 @@ def install():
     print("\n")
     rc.set_rc_files()
     executables.sync_executables()
+    apps.sync_apps()
 
     print("\nTo make sure the ENV is up to date, be sure to open a new terminal window, or run (one of) the following command(s):")
     for path in rc.get_rc_file_paths():

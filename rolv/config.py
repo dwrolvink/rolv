@@ -17,7 +17,7 @@ from .lib import insert, trim_newlines
 # ====================================================================
 
 
-def get_rc_config():
+def get_rc_config(path):
     """provide config to be put in the rc files. Called by rc.compile_config_block()"""
     src_dir = Path(package.get_src_path())
 

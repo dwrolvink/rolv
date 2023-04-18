@@ -27,6 +27,7 @@ alias rmf="rm -rf"
 alias nano="nano -w"
 alias tf="terraform"
 alias da="direnv allow"
+alias ssh-add="ssh-keygen -t ed25519 -a 100"
 
 # venvs
 function enter() { 

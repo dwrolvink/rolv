@@ -3,6 +3,9 @@ Personal package to quickly setup a shell to my liking, with functions, shell in
 
 Not intended to be used by others, though everyone is free to copy/reuse code that they find useful.
 
+## Update/Install
+It should be idempotent to run ./install_from_git after an update to this repo has been made.
+
 ## Notices
 - Will remove all files under `$HOME/.local/bin` that start with `__rolv_`!
 - Will copy executables to `$HOME/.local/bin`! (all files written there are prefixed with `__rolv_`)

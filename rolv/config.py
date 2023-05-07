@@ -23,7 +23,7 @@ def get_rc_config(path):
 
     block = ""
 
-    for path in ["config/default_aliases_and_functions"]:
+    for path in ["config/default_aliases_and_functions", "config/run"]:
         abs_path = src_dir.joinpath(path)
         with open(abs_path, "r") as f:
             content = f.read()

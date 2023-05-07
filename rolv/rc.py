@@ -42,8 +42,8 @@ def compose_config(path):
     If you want to read the current config block, see get_config_block()"""
 
     block = ""
-    block += insert(config.get_rc_config(path))
     block += insert(executables.get_rc_config(path))
+    block += insert(config.get_rc_config(path))
     block += insert(apps.get_rc_config(path))
 
     return block

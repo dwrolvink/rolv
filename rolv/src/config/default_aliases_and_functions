@@ -28,6 +28,10 @@ alias nano="nano -w"
 alias tf="terraform"
 alias da="direnv allow"
 alias ssh-add="ssh-keygen -t ed25519 -a 100"
+alias weigh="du -shc -- {.[!.],..?,}*" # get size of ALL files in current folder
+
+alias lcat="ls -la"
+alias cls="cat"
 
 # venvs
 function enter() { 

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Don't apply if backup is not configured
+[ ! -d "$HOME/git/backup/backup_scripts/ssd_sync" ] && exit 
+
+printf "running ssd sync check... "
+
+# error if log file does not exist.
+log_file_path="$HOME/git/backup/backup_scripts/ssd_sync/ssd_sync.log"
+[ ! -f "$log_file_path" ] && echo "Directory $log_file_path does not exist." && exit 
+
+age_seconds="$(echo $((($(date +%s) - $(date +%s -r "$log_file_path")))))"
+if [ $age_seconds -gt 7200 ]; then
+    echo -e "\nWARNING! $log_file_path age is too old! (more than two hours; $age_seconds seconds)"
+fi
+
+echo "done."

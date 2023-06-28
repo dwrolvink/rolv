@@ -1,2 +1,2 @@
 # to be run everytime the shell is started
-check_ssd_sync
+[ ! -z "$ROLV_RUN" ] && check_ssd_sync

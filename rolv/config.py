@@ -23,10 +23,21 @@ def get_rc_config(path):
 
     block = ""
 
-    for path in ["config/default_aliases_and_functions", "config/run"]:
-        abs_path = src_dir.joinpath(path)
+    shell = "bash"
+    print(path)
+    if "zsh" in path.name:
+        shell = "zsh"
+
+    for config_path in ["config/default_aliases_and_functions", "config/run"]:
+        # read config file
+        abs_path = src_dir.joinpath(config_path)
         with open(abs_path, "r") as f:
             content = f.read()
+
+        # inject variables
+        content = content.replace('__SHELL__', shell)
+
+        # add to output
         block += insert(trim_newlines(content))
 
     return block

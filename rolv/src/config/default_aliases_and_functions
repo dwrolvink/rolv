@@ -10,7 +10,7 @@ fi
 
 # Direnv
 if command -v direnv &> /dev/null; then
-    eval "$(direnv hook bash)"
+    eval "$(direnv hook __SHELL__)"
 else
     if command -v apt-get &> /dev/null; then
         echo "Tip: install direnv with: sudo apt-get install direnv"

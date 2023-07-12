@@ -33,6 +33,11 @@ alias weigh="du -shc -- {.[!.],..?,}*" # get size of ALL files in current folder
 alias lcat="ls -la"
 alias cls="cat"
 
+# basic functions
+function wrap {
+    echo "$1$(cat < /dev/stdin)$2"
+}
+
 # venvs
 function enter() { 
     source ~/venvs/"${1}"/bin/activate 

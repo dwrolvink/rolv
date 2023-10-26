@@ -28,7 +28,7 @@ def get_rc_config(path):
     if "zsh" in path.name:
         shell = "zsh"
 
-    for config_path in ["config/default_aliases_and_functions", "config/run"]:
+    for config_path in ["config/default_aliases_and_functions", "config/run", f'config/{shell}rc']:
         # read config file
         abs_path = src_dir.joinpath(config_path)
         with open(abs_path, "r") as f:

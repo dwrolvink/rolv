@@ -1,0 +1,45 @@
+# -- Specifically for bashrc
+# ------------------------------------------------------------
+# autocompletion
+if  [ -f /etc/bash_completion ]; then                           # ubuntu path
+    if ! shopt -oq posix; then
+        . /etc/bash_completion
+    fi
+elif  [ -f /usr/share/bash-completion/bash_completion ]; then   # arch path
+    if ! shopt -oq posix; then
+        . /usr/share/bash-completion/bash_completion
+    fi
+else                                                            # both not found
+    if command -v apt-get &> /dev/null; then
+        echo "Tip: install bash-completion with: sudo apt-get install bash-completion"
+    else
+        echo "Tip: install bash-completion with: sudo pacman -Sy bash-completion"
+    fi
+fi
+
+
+### ctrl+arrows
+# works in most terminals: xterm, gnome-terminal, terminator, st, sakura, termit, …
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+# urxvt
+"\eOc": forward-word
+"\eOd": backward-word
+
+### ctrl+delete
+"\e[3;5~": kill-word
+# in this case, st misbehaves (even with tmux)
+"\e[M": kill-word
+# and of course, urxvt must be always special
+"\e[3^": kill-word
+
+### ctrl+backspace
+"\C-h": backward-kill-word
+
+### ctrl+shift+delete
+"\e[3;6~": kill-line
+# URxvt note: you have to disable Ctrl+Shift popup in ~/.Xresources:
+# URxvt.iso14755: true
+# URxvt.iso14755_52: false
+"\e[3@": kill-line
+# st sends same sequence as plain delete :(

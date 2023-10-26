@@ -1,0 +1,10 @@
+# -- Specifically for zsh
+# ------------------------------------------------------------
+
+### ctrl+delete
+bindkey "\e[3;5~" kill-word
+# urxvt
+bindkey "\e[3^" kill-word
+
+### ctrl+backspace
+bindkey '^H' backward-kill-word

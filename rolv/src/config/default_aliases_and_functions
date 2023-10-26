@@ -5,10 +5,9 @@
 # (src/config/default_aliases_and_functions)
 export CURRENT_SHELL="$(ps -o comm= -p $$)"
 
-# add $HOME/.local/bin if not in PATH
-if [[ ! "$PATH" == *$HOME/.local/bin* ]]; then
-  PATH="$HOME/.local/bin:${PATH:+${PATH}:}"
-fi
+# add $HOME/.local/bin in front
+PATH="$HOME/.local/bin:${PATH:+${PATH}:}"
+
 
 # Direnv
 if command -v direnv &> /dev/null; then

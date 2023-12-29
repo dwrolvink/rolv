@@ -9,8 +9,8 @@ log_file_path="$HOME/git/backup/backup_scripts/ssd_sync/ssd_sync.log"
 [ ! -f "$log_file_path" ] && echo "Directory $log_file_path does not exist." && exit 
 
 age_seconds="$(echo $((($(date +%s) - $(date +%s -r "$log_file_path")))))"
-if [ $age_seconds -gt 7200 ]; then
-    echo -e "\nWARNING! $log_file_path age is too old! (more than two hours; $age_seconds seconds)"
+if [ $age_seconds -gt 93600 ]; then
+    echo -e "\nWARNING! $log_file_path age is too old! (more than 26 hours; $age_seconds seconds)"
 fi
 
 echo "done."

@@ -233,10 +233,20 @@
                 "when": "textInputFocus"
             },
             {
+                "key": "ctrl+end",
+                "command": "cursorBottom",
+                "when": "textInputFocus"
+            },
+            {
                 "key": "ctrl+shift+home",
                 "command": "cursorTopSelect",
                 "when": "textInputFocus"
             },
+            {
+                "key": "ctrl+shift+end",
+                "command": "cursorBottomSelect",
+                "when": "textInputFocus"
+              },
             {
                 "key": "ctrl+shift+up",
                 "command": "cursorUpSelect",

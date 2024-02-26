@@ -6,6 +6,18 @@
                 "command": "workbench.action.reloadWindow",
                 "when": "",
                 "description": "Reload window"
+            },
+            {
+                "key": "ctrl+z",
+                "command": "undo"
+            },
+            {
+                "key": "ctrl+shift+z",
+                "command": "redo"
+            },
+            {
+                "key": "ctrl+y",
+                "command": "redo"
             }
         ]
     },

@@ -18,6 +18,15 @@
             {
                 "key": "ctrl+y",
                 "command": "redo"
+            },
+            {
+                "key": "ctrl+a",
+                "command": "list.selectAll",
+                "when": "listFocus && listSupportsMultiselect && !inputFocus && !treestickyScrollFocused"
+            },
+            {
+                "key": "ctrl+a",
+                "command": "-editor.action.selectAll"
             }
         ]
     },

@@ -11,9 +11,6 @@ if deployment not in valid_deployments:
     print(f'Error: deployment not valid. Valid deployments: {valid_deployments}')
     exit(1)
 
-print(deployment)
-exit()
-
 # input
 if deployment == "home":
     negative_keybindings_file = "/home/dorus/git/rolv/rolv/src/config/vscode/keybindings.linux.negative.json"

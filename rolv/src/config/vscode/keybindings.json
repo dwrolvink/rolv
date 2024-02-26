@@ -26,7 +26,20 @@
             },
             {
                 "key": "ctrl+a",
-                "command": "-editor.action.selectAll"
+                "command": "editor.action.selectAll"
+            },
+            {
+                "key": "ctrl+s",
+                "command": "workbench.action.files.save"
+            },
+            {
+                "key": "ctrl+shift+s",
+                "command": "workbench.action.files.saveAs"
+            },
+            {
+                "key": "ctrl+shift+s",
+                "command": "workbench.action.files.saveLocalFile",
+                "when": "remoteFileDialogVisible"
             }
         ]
     },

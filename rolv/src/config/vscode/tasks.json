@@ -1,0 +1,44 @@
+[
+    {
+        "name": "echo",
+        "description": "Test task to check if tasks are working",
+        "keybinding": {
+            "key": "ctrl+k t",
+            "command": "workbench.action.tasks.runTask",
+            "args": "rt.echo"
+        },
+        "linux_task": {
+            "label": "rt.echo",
+            "type": "shell",
+            "command": "echo Hello",
+            "problemMatcher": []
+        },
+        "windows_task": {
+            "label": "rt.echo",
+            "type": "shell",
+            "command": "echo Hello",
+            "problemMatcher": []
+        }
+    },
+    {
+        "name": "open obsidian workspace",
+        "description": "Test task to check if tasks are working",
+        "keybinding": {
+            "key": "ctrl+o j",
+            "command": "workbench.action.tasks.runTask",
+            "args": "rt.workspace.obsidian"
+        },
+        "linux_task": {
+            "label": "rt.workspace.obsidian",
+            "type": "shell",
+            "command": "code-insiders /home/dorus/Documents/vscode/obsidian-html.code-workspace",
+            "problemMatcher": []
+        },
+        "windows_task": {
+            "label": "rt.workspace.obsidian",
+            "type": "shell",
+            "command": "code /home/dorus/Documents/vscode/obsidian-html.code-workspace",
+            "problemMatcher": []
+        }
+    }
+]

@@ -18,8 +18,8 @@ if deployment == "home":
     extra_keybindings_file = "/home/dorus/.config/rolv/vscode/keybindings.json"
     keybindings_output_file = "/home/dorus/.config/Code - Insiders/User/keybindings.json"
 else:
-    negative_keybindings_file = "/u/rolvinkd/git/rolv/rolv/src/config/vscode/keybindings.windows.negative.json"
-    keybindings_file = "/u/rolvinkd/git/rolv/rolv/src/config/vscode/keybindings.json"
+    negative_keybindings_file = "/u/rolvinkd/gitn/rolv/rolv/src/config/vscode/keybindings.windows.negative.json"
+    keybindings_file = "/u/rolvinkd/gitn/rolv/rolv/src/config/vscode/keybindings.json"
     extra_keybindings_file = "/u/rolvinkd/.config/rolv/vscode/keybindings.json"
     keybindings_output_file = "/tmp/keybindings.json"
 

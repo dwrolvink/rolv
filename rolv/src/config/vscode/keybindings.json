@@ -150,6 +150,12 @@
                 "key": "ctrl+f",
                 "command": "workbench.action.terminal.focusFind",
                 "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+            },
+            {
+                "key": "ctrl+enter",
+                "command": "editor.action.replaceAll",
+                "when": "editorFocus && findWidgetVisible",
+                "description": "Replace all found instances when in the find panel"
             }
         ]
     },

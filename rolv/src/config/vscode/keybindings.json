@@ -152,10 +152,9 @@
                 "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
             },
             {
-                "key": "ctrl+enter",
-                "command": "editor.action.replaceAll",
-                "when": "editorFocus && findWidgetVisible",
-                "description": "Replace all found instances when in the find panel"
+                "key": "ctrl+alt+enter",
+                "command": "search.action.replaceAll",
+                "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
             }
         ]
     },

@@ -164,6 +164,20 @@
                 "key": "ctrl+e",
                 "command": "workbench.action.terminal.runSelectedText",
                 "description": "Run selected code in terminal"
+            },
+            {
+                "key": "ctrl+delete",                  
+                "command": "workbench.action.terminal.sendSequence",
+                "args": { "text": "\u001b\u007f" },
+                "when": "terminalFocus",
+                "description": "Sends escape+delete to remove word to the left in terminal"
+            },
+            {
+                "key": "ctrl+end",
+                "command": "workbench.action.terminal.sendSequence",
+                "args": { "text": "\u001b\u0064" },
+                "when": "terminalFocus",
+                "description": "Sends escape+d to remove word to the right in terminal"
             }
         ]
     },

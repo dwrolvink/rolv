@@ -54,7 +54,6 @@ alias setmerge="git config pull.rebase false"
 
 # k8s
 alias kn="kubens"
-alias kx="kubectx"
 alias k="kubectl"
 
 
@@ -70,4 +69,8 @@ function kssh() {
 function ksa() {
   # Show the annotations of Kubernetes objects, like, pods, services, etc.
   kubectl get ${@} -o 'go-template={{range .items}}{{println "-------------------------------------"}}{{.metadata.name}}:{{"\n"}}{{range $key,$value := .metadata.annotations}}{{$key}}: {{$value}}{{"\n"}}{{end}}{{"\n"}}{{end}}'
+}
+
+function kx() {
+    kubectx | fzf | xargs kubectx
 }

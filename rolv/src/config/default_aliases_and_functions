@@ -71,6 +71,19 @@ function ksa() {
   kubectl get ${@} -o 'go-template={{range .items}}{{println "-------------------------------------"}}{{.metadata.name}}:{{"\n"}}{{range $key,$value := .metadata.annotations}}{{$key}}: {{$value}}{{"\n"}}{{end}}{{"\n"}}{{end}}'
 }
 
-function kx() {
-    kubectx | fzf | xargs kubectx
+kx () 
+{ 
+    if [[ -n "$1" ]]; then
+        res="$(kubectx "$1" 2>&1)";
+        if [[ $? -eq 0 ]]; then
+            kubectx "$1";
+        else
+            res="$(kubectx | fzf -q "$1")";
+            [[ $? -eq 0 ]] && kubectx "$res";
+        fi;
+    else
+        res="$(kubectx | fzf)";
+        [[ $? -eq 0 ]] && kubectx "$res";
+    fi;
+    return 0
 }
